@@ -319,7 +319,7 @@ GROUP BY Channel
 ORDER BY Fraud_Rate_Pct DESC;
 
 /* =========================================================
-   6. SUBQUERY EXAMPLES
+   6. SUBQUERY
    ========================================================= */
 
 -- Customers with above-average total outflows
@@ -485,9 +485,6 @@ SELECT
 FROM dbo.vw_clean_transactions
 ORDER BY Account_ID, Transaction_Date, Transaction_ID;
 
-/* =========================================================
-   10. INTERVIEW-STYLE QUERIES
-   ========================================================= */
 
 -- 10.1 Which customers are most at risk of churn?
 SELECT
