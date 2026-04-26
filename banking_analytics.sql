@@ -485,6 +485,32 @@ SELECT
 FROM dbo.vw_clean_transactions
 ORDER BY Account_ID, Transaction_Date, Transaction_ID;
 
+-- 9.6 DENSE_RANK(): customer ranking without gaps by total outflows
+SELECT
+    Customer_ID,
+    First_Name,
+    Last_Name,
+    Total_Outflows,
+    DENSE_RANK() OVER (
+        ORDER BY Total_Outflows DESC
+    ) AS dense_outflow_rank
+FROM dbo.vw_customer_360
+ORDER BY dense_outflow_rank, Customer_ID;
+
+-- 9.7 FIRST_VALUE(): first transaction date per account
+SELECT
+    Account_ID,
+    Transaction_ID,
+    Transaction_Date,
+    Amount_Abs,
+    FIRST_VALUE(Transaction_Date) OVER (
+        PARTITION BY Account_ID
+        ORDER BY Transaction_Date, Transaction_ID
+        ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+    ) AS First_Transaction_Date
+FROM dbo.vw_clean_transactions
+ORDER BY Account_ID, Transaction_Date, Transaction_ID;
+
 
 -- 10.1 Which customers are most at risk of churn?
 SELECT
