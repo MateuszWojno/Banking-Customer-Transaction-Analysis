@@ -198,6 +198,19 @@ FROM dbo.vw_customer_360;
 
 ---
 
+## SQL Skills Demonstrated
+
+- Data cleaning with views
+- JOINs between customers, accounts, transactions and loans
+- CASE WHEN for business segmentation
+- GROUP BY / HAVING for KPI aggregation
+- CTEs for multi-step transformations
+- Subqueries for above-average analysis
+- Temporary tables for intermediate analytical layers
+- Window functions: ROW_NUMBER, RANK, DENSE_RANK, LAG, LEAD, FIRST_VALUE
+- Data quality checks
+
+---
 ## 📌 Project Highlights
 
 * Realistic banking scenario
