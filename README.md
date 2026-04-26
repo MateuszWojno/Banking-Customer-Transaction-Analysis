@@ -35,7 +35,6 @@ The dataset simulates a banking system with multiple entities:
 * **Accounts** – account details and status
 * **Transactions** – financial activity
 * **Loans** – credit products
-* **Cards** – payment instruments
 
 ---
 
